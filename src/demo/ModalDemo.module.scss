@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin: 10px auto 40px 5px;
+  font-weight: bold;
+}
+
+.modalBtn {
+  width: 100px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(98, 0, 255);
+  border-radius: 20px;
+  height: 50px;
+}

@@ -1,0 +1,20 @@
+.TabContainer {
+  background-color: rgb(195, 190, 190);
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  height: 50px;
+  .NomalTab {
+    background-color: rgb(195, 190, 190);
+    width: 100%;
+    text-align: left;
+    border: none;
+  }
+  .CurrTab {
+    background-color: rgb(47, 15, 187);
+    width: 100%;
+    text-align: left;
+    border: none;
+    color: white;
+  }
+}

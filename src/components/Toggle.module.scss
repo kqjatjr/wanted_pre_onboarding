@@ -1,0 +1,26 @@
+.CheckBoxMain {
+  display: none;
+  &:checked + .ToggleBox .Circle {
+    transform: translateX(26px);
+  }
+  &:checked + .ToggleBox {
+    background-color: rgb(98, 0, 255);
+  }
+}
+.ToggleBox {
+  position: absolute;
+  border-radius: 50px;
+  height: 24px;
+  width: 50px;
+  background-color: rgb(214, 214, 214);
+}
+.Circle {
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  top: 2px;
+  left: 2px;
+  height: 20px;
+  transition: transform 0.2s linear;
+  background-color: rgb(255, 255, 255);
+}

@@ -1,0 +1,69 @@
+.root {
+  z-index: 999;
+}
+
+.container {
+  display: flex;
+  font-size: 16px;
+  flex-direction: column;
+  position: relative;
+  width: 450px;
+
+  .inputContainer {
+    z-index: 0;
+    border: 1px solid rgb(195, 190, 190);
+    border-radius: 20px;
+    display: flex;
+
+    &.editing {
+      box-shadow: 5px 5px 5px rgba(75, 75, 75, 0.6);
+    }
+
+    &.Find {
+      border-radius: 20px 20px 0 0;
+      box-shadow: none;
+    }
+
+    input {
+      box-sizing: border-box;
+      margin-left: 20px;
+      height: 45px;
+      width: 400px;
+      padding: 10px 0;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: inherit;
+      border: none;
+      margin-right: 10px;
+    }
+  }
+
+  .filterContainer {
+    z-index: 1;
+    width: 450px;
+    box-sizing: border-box;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 5px 5px 5px rgba(75, 75, 75, 0.6);
+    border-left: 1px solid rgb(195, 190, 190);
+    border-right: 1px solid rgb(195, 190, 190);
+    position: absolute;
+    top: 45px;
+    left: 0;
+
+    .content {
+      box-sizing: border-box;
+      height: 45px;
+      padding: 10px 0 10px 20px;
+      width: 100%;
+
+      &:hover {
+        background-color: rgb(216, 216, 216);
+        border-radius: 20px;
+      }
+    }
+  }
+}

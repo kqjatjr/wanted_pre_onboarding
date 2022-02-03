@@ -1,0 +1,19 @@
+.Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  margin: 10px auto 40px 5px;
+  font-weight: bold;
+}
+
+.toggle {
+  margin-right: 50px;
+}
+
+.toggleText {
+  margin-top: 50px;
+}
