@@ -6,7 +6,7 @@ type TTab = {
 
 type TProps = {
   currTab: string;
-  tabList: TTab;
+  tabList: TTab[];
   onSelectTab: (title: string) => void;
 };
 
