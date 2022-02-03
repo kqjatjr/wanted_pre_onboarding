@@ -1,5 +1,4 @@
-import { useModal } from "../store/ModalContext";
-
+import { useModal } from "../components/Modal";
 import styles from "./ModalDemo.module.scss";
 
 const ModalDemo = () => {
