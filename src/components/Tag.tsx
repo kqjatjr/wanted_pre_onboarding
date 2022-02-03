@@ -13,7 +13,6 @@ type TProps = {
   placeholder?: string;
   onRemoveTag: (tag: TTag) => void;
   onAddTag: (tag: TTag) => void;
-  onClickTag?: (tag: TTag) => void;
   idGenerator?: (name: string) => string | Promise<string>;
   disabled?: boolean;
 };
@@ -23,7 +22,6 @@ const Tag = ({
   delimiters = ["Enter"],
   placeholder = "Press enter to add tag",
   onRemoveTag,
-  onClickTag,
   idGenerator = (name: string) => name,
   disabled,
   onAddTag,
