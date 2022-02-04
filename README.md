@@ -1,46 +1,90 @@
-# Getting Started with Create React App
+# 원티드 프리 온보딩 ( wanted_pre_onboarding)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## 사용기술
 
-In the project directory, you can run:
+- React, TypeScript, sass
 
-### `npm start`
+## AutoComplete
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 구현한 방법과 이유에 대한 간략한 내용
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- 토글이 온/오프 상태인지 여부와, 토글의 아이디, 토글의 클릭했을시 동작하는 이벤트를 prop으로 전달받아 작동하게 구현
 
-### `npm test`
+### 자세한 실행 방법
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 토글 버튼을 클릭하면 현재 토글 버튼의 상태에 따라 true/false로 상태가 변환된다.
+- 토글의 상태에 따라서 공이 좌/우로 이동한다.
+- 토글의 상태에 따라서 텍스트의 문구가 변경된다.
 
-### `npm run build`
+## ClickToEdit
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 구현한 방법과 이유에 대한 간략한 내용
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 재사용성을 살리기위해 labelName, value, onChange를 prop으로 받아 이름과 나이를 재사용하여 구현
+- 더블클릭하면 div -> input 변경되는 로직과 인풋값을 입력하고 포커스 아웃을 하면 다시 div로 변경되며 인풋 값이 반영이 되게 구현
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 구현하면서 어려웠던 점과 해결 방법 (Error Handling Log)
 
-### `npm run eject`
+- 외부에서 value 값이 변경되는 상황을 구현하기위해 useEffect로 value값이 변하면 내부 컴포넌트 내부 변수인 value의 값 변경
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 자세한 실행 방법
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 이름과 나이의 박스를 더블클릭하면 입력할 수 있습니다.
+- 입력후 다른 화면을 클릭하면 값이 반영되어 이름 @@ 나이 @@ 로 변경됩니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## AutoComplete
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 구현한 방법과 이유에 대한 간략한 내용
 
-## Learn More
+- 과거 검색 이록이 나오는 컴포넌트로 생각하고 구현
+- 사용자가 검색을 하면 그 검색 기록이 저장되며 이후 이전 검색에 포함되는 키워드를 입력하면 그 검색 이력이 나오게 구현
+- 재사용을 생각하여 value(인풋 값), suggestions(검색 기록), onKeyPress(Enter를 누르면 검색기록에 추가), onChange(인풋 값 변경), onFilter(기록 찾기), onRemoveWord(검색 기록 삭제)를 prop으로 받게 구현
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 자세한 실행 방법
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 사용자가 검색을 하면 검색 기록에 기록이 저장됩니다.
+- 이후에 검색 할때 검색기록에 포함된 키워드를 입력한다면 비슷한 키워드를 화면에 출력해줍니다.
+- 사용자가 지우고 싶은 키워드의 우측에 x 버튼을 클릭하면 해당 키워드는 삭제됩니다.
+
+## Modal
+
+### 구현한 방법과 이유에 대한 간략한 내용
+
+- 재사용을 생각하여 closeModal(모달 닫기), content(모달속 문구)를 prop으로 받게 구현
+- 모달의 상태를 전역으로 관리하여 어느 컴포넌트든 모달을 닫을 수 있게 구현
+
+### 구현하면서 어려웠던 점과 해결 방법 (Error Handling Log)
+
+- 초기에는 모달의 상태를 전역으로 하지 않았지만 모달의 상태를 전역으로 관리하여 다른 컴포넌트에서 닫을 수 있게 하기위해 context api를 통해 구현
+
+### 자세한 실행 방법
+
+- Open Modal 버튼을 클릭하면 모달창 출력
+- 모달창의 x 버튼을 클릭하면 모달창 닫기
+
+## Tab
+
+### 구현한 방법과 이유에 대한 간략한 내용
+
+- 추후에 Tab 버튼의 확장성을 고려하여 currTab(현재 출력되는 탭), tabList(탭들의 리스트), onSelectTab(탭 클릭)를 prop으로 받게 구현
+
+### 자세한 실행 방법
+
+- 초기 탭은 Tab1이고 그 이후에 원하는 탭을 클릭하면 해당 탭에 대응되는 내용이 출력됩니다.
+
+## Tag
+
+### 구현한 방법과 이유에 대한 간략한 내용
+
+- 재사용 성을 고려하여 tagArray(추가된 태그들의 배열), delimiters(태그를 추가할때 작동하는 키 설정), placeholder, onRemoveTag(태그 삭제), idGenerator(태그들의 id), disabled(인풋 창의 활성/비활성), onAddTag(태그 추가)를 prop으로 받게 구현
+
+### 자세한 실행 방법
+
+- 인풋에 값을 입력하고 사용자가 지정한 키를 입력하면(ex: Enter) 태그가 추가되여 화면에 출력
+- 태그의 우측에 X 버튼을 클릭하면 태그 삭제
+
+## 전체적으로 구현하면서 생각한점
+
+- 재사용을 하기위해 해당 컴포넌트가 어떤 값을 prop으로 받아야 하는지에 대해 고민을 많이 하였습니다. 이 값을 prop으로 받으면 어떤 부분이 좋을지는 고민하여 구현하였습니다.
