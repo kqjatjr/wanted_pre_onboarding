@@ -14,6 +14,7 @@ type TProps = {
   onKeyPress: (e: KeyboardEvent<HTMLInputElement>) => void;
   onFilter?: (value: string, list: TWord[]) => TWord[];
   onRemoveWord: () => void;
+  disabled?: boolean;
 };
 
 const AutoComplete = ({
@@ -24,6 +25,7 @@ const AutoComplete = ({
   onFilter = (value: string, list: TWord[]) =>
     list.filter((filter) => value.length !== 0 && filter.name.includes(value)),
   onRemoveWord,
+  disabled,
 }: TProps) => {
   const [isEdit, setIsEdit] = useState(false);
   const [isFind, setIsFind] = useState(false);
@@ -62,6 +64,7 @@ const AutoComplete = ({
             onFocus={() => setIsEdit(true)}
             onKeyPress={onKeyPress}
             onBlur={() => setIsEdit(false)}
+            disabled={disabled}
           />
           <button onClick={onRemoveWord}>X</button>
         </div>

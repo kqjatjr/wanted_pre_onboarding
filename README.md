@@ -42,11 +42,12 @@
 - 입력후 다른 화면을 클릭하면 값이 반영되어 이름 @@ 나이 @@ 로 변경됩니다.
 - Props
 
-| 이름        | 타입     | 기본값 | 설명                                                                                   |
-| ----------- | -------- | ------ | -------------------------------------------------------------------------------------- |
-| `labelName` | `string` |        | 사용자가 지정한 label의 이름                                                           |
-| `value`     | `string` |        | 사용자가 입력한 인풋의 value값                                                         |
-| `onChange`  | `func`   |        | 사용자가 입력한 인풋 값의 변경 함수 `(e: React.ChangeEvent<HTMLInputElement>) => void` |
+| 이름        | 타입      | 기본값 | 설명                                                                                   |
+| ----------- | --------- | ------ | -------------------------------------------------------------------------------------- |
+| `labelName` | `string`  |        | 사용자가 지정한 label의 이름                                                           |
+| `value`     | `string`  |        | 사용자가 입력한 인풋의 value값                                                         |
+| `onChange`  | `func`    |        | 사용자가 입력한 인풋 값의 변경 함수 `(e: React.ChangeEvent<HTMLInputElement>) => void` |
+| `disabled`  | `boolean` |        | 인풋의 활성화/비활성화 여부                                                            |
 
 ## AutoComplete
 
@@ -70,6 +71,7 @@
 | `onRemoveWord` | `func`                          |                                                                                                                | 과거 검색 이력을 지우는 함수 ` () => void`                                                        |
 | `onKeyPress`   | `func`                          |                                                                                                                | 사용자가 검색하기 위해 키를 입력한 것을 받는 함수 `(e: KeyboardEvent<HTMLInputElement>) => void;` |
 | `onFilter`     | `func`                          | `(value: string, list: TWord[]) => list.filter((filter) => value.length !== 0 && filter.name.includes(value))` | 사용자가 검색한 값을 이전 검색 이력에서 찾는 함수                                                 |
+| `disabled`     | `boolean`                       |                                                                                                                | 인풋의 활성화 비활성화 여부                                                                       |
 
 ## Modal
 
@@ -136,4 +138,4 @@
 | `onRemoveTag` | `func`                                   |                            | 태그를 지울때 사용하는 함수                                                         |
 | `onAddTag`    | `func`                                   |                            | 태그를 지울때 사용하는 함수 `(tag: { id: string or number; name: string};) => void` |
 | `idGenerator` | `func`                                   | `(name: string) => name`   | 태그의 아이디를 생성할때 사용하는 함수                                              |
-| `disabled`    | `boolean`                                | `true`                     | 인풋의 사용가능 여부 지정                                                           |
+| `disabled`    | `boolean`                                |                            | 인풋의 활성화/비활성화 여부                                                         |

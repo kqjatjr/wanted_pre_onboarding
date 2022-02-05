@@ -19,10 +19,14 @@ const ClickToEditDemo = () => {
       <label className={styles.title}>ClickToEdit</label>
       <div className={styles.inputContainer}>
         <div className={styles.nameContainer}>
-          <ClickToEdit labelName="이름" value={name} onChange={changeName} />
+          <ClickToEdit
+            labelName="이름"
+            inputValue={name}
+            onChange={changeName}
+          />
         </div>
         <div>
-          <ClickToEdit labelName="나이" value={age} onChange={changeAge} />
+          <ClickToEdit labelName="나이" inputValue={age} onChange={changeAge} />
         </div>
         <label>
           이름 {name} 나이 {age}

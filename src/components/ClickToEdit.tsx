@@ -3,20 +3,21 @@ import styles from "./ClickToEdit.module.scss";
 
 type TProps = {
   labelName: string;
-  value: string;
+  inputValue: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
 };
 
-const ClickToEdit = (props: TProps) => {
+const ClickToEdit = ({ labelName, inputValue, onChange, disabled }: TProps) => {
   const [isEdit, setIsEdit] = useState(false);
-  const [value, setValue] = useState(props.value);
+  const [value, setValue] = useState(inputValue);
 
   useEffect(() => {
-    setValue(props.value);
-  }, [props.value]);
+    setValue(inputValue);
+  }, [inputValue]);
 
   const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
-    props.onChange(e);
+    onChange(e);
     setIsEdit(false);
   };
 
@@ -30,12 +31,17 @@ const ClickToEdit = (props: TProps) => {
 
   return (
     <div className={styles.container}>
-      <label>{props.labelName}</label>
+      <label>{labelName}</label>
       {isEdit ? (
-        <input onChange={handleChange} onBlur={handleBlur} value={value} />
+        <input
+          onChange={handleChange}
+          onBlur={handleBlur}
+          value={value}
+          disabled={disabled}
+        />
       ) : (
         <div className={styles.ChangeDiv} onDoubleClick={doubleClick}>
-          {props.value}
+          {inputValue}
         </div>
       )}
     </div>
