@@ -84,6 +84,13 @@
 
 ### 자세한 실행 방법
 
+- modalContext
+  | 이름 | 타입 | 기본값 | 설명 |
+  | ------------- | --------- | ------ | ------------------------------------------ |
+  | `modalState` | `boolean` | `false` | 모달창 활성화/비활성화 상태 |
+  | `closeModal` | `func` | `() => void` | 모달창의 상태를 비활성화로 만드는 함수 |
+  | `openModal` | `func` | `(option: {content : ReactNode}) => void` | 모달창 내부의 내용을 받고 모달창의 상태를 `true`로 활성화 하는 함수 |
+
 - `const { openModal } = useModal()`로 모달을 여는 함수를 불러와 버튼에 넣는다.
 - Open Modal 버튼을 클릭하면 모달창 출력
 - 모달창의 x 버튼을 클릭하면 모달창 닫기
